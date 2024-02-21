@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:contentDescription="fila"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_food_avatar"
+        />
+
+    <TextView
+        android:id="@+id/foodLabelTextView"
+        android:layout_width="180dp"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        tools:text="Филадельфия"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgView" />
+
+    <TextView
+        android:id="@+id/foodCostTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        tools:text="680 р"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/imgView"
+        app:layout_constraintTop_toBottomOf="@+id/foodLabelTextView" />
+
+
+    <Button
+        android:id="@+id/foodToCart"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/black"
+        android:text="В корзину"
+        android:visibility="visible"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@+id/imgView"
+        app:layout_constraintTop_toBottomOf="@+id/foodCostTextView" />
+
+    <EditText
+        android:id="@+id/editFoodQuantity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/foodQuantityDown"
+        app:layout_constraintTop_toTopOf="@id/foodQuantityDown"
+        android:visibility="invisible"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/foodQuantityDown"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/minus_button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/imgView"
+        app:layout_constraintTop_toBottomOf="@+id/foodCostTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/foodQuantityUp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/plus_button"
+        app:layout_constraintStart_toEndOf="@id/editFoodQuantity"
+        app:layout_constraintTop_toTopOf="@id/foodQuantityDown"
+        android:visibility="invisible"/>
+    
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="imgView, editFoodQuantity"
+        app:barrierDirection="bottom"/>
+    
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
