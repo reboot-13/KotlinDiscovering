@@ -30,6 +30,9 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:exported="true"/>
+        <activity
+        android:name=".AboutActivity"
             android:exported="true">
 
         <meta-data

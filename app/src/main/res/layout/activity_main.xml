@@ -30,21 +30,11 @@
             android:layout_marginStart="48dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="Роллы"
+            android:text="Меню"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/flow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:fontFamily="casual"
-            android:gravity="center"
-            android:text="Суши"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:ignore="MissingConstraints" />
+
 
         <TextView
             android:id="@+id/flow3"
@@ -53,7 +43,7 @@
             android:layout_marginStart="48dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="Сеты"
+            android:text="Заказы"
             android:textColor="@color/white"
             android:textSize="18sp"
             tools:ignore="MissingConstraints" />
@@ -65,7 +55,7 @@
             android:layout_marginStart="48dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="Пицца"
+            android:text="О нас"
             android:textColor="@color/white"
             android:textSize="18sp"
             tools:ignore="MissingConstraints" />
@@ -77,7 +67,7 @@
             android:layout_marginStart="48dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="Wok"
+            android:text="Профиль"
             android:textColor="@color/white"
             android:textSize="18sp"
             tools:ignore="MissingConstraints" />
@@ -100,7 +90,7 @@
         <androidx.constraintlayout.helper.widget.Flow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:constraint_referenced_ids="flow1, flow2, flow3, flow4, flow5"
+            app:constraint_referenced_ids="flow1, flow3, flow4, flow5"
             app:flow_horizontalStyle="spread"
             app:flow_wrapMode="chain"
             app:layout_constraintStart_toStartOf="parent"

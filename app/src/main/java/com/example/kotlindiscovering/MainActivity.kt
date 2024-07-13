@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onCartPressed(){
         val intent = Intent(this, CartActivity::class.java)
-       // intent.putParcelableArrayListExtra(CartActivity.EXTRA_FOOD_TO_CART,(( "Филадельфия", "200", 2))
+        intent.putExtra(KEY_FOOD_TO_CART, "ass")
         startActivity(intent)
     }
 

@@ -11,19 +11,12 @@ import com.example.kotlindiscovering.model.Food
 class CartActivity : BaseActivity() {
     lateinit var binding: ActivityCartBinding
     lateinit var cartFoodList : List<Food>
-    lateinit var adapter : CartFoodAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCartBinding.inflate(layoutInflater).also { setContentView(it.root) }
         setContentView(binding.root)
 
-       // cartFoodList = (savedInstanceState?.getParcelable<Food>(KEY_FOOD_TO_CART) ?: intent?.getParcelableExtra(EXTRA_FOOD_TO_CART))!!
-
-        val adapter = CartFoodAdapter(cartFoodList)
-        val layoutManager = LinearLayoutManager(this)
-        binding.cartRecyclerView.adapter = adapter
-        binding.cartRecyclerView.layoutManager = layoutManager
     }
 
     companion object {
