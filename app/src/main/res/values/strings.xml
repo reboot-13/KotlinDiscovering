@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KotlinDiscovering</string>
+    <string name="change_reminder_popup_menu_item">Изменить</string>
+    <string name="delete_popup_menu_item">Удалить</string>
 </resources>

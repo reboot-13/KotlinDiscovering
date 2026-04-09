@@ -4,7 +4,9 @@
 
     </style>
 
-    <style name="Theme.KotlinDiscovering" parent="Base.Theme.KotlinDiscovering" />
+    <style name="Theme.KotlinDiscovering" parent="Base.Theme.KotlinDiscovering">
+        <item name="colorPrimary">@color/darkPink</item>
+    </style>
 
     <style name="button.style" parent="ThemeOverlay.AppCompat">
         <item name="android:textColor">#000</item>

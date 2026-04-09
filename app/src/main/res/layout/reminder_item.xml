@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/reminderItem"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="?android:attr/selectableItemBackground">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/reminderCheckBox"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <TextView
+        android:id="@+id/reminderTitle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/reminderDescription"
+        android:text="Название напомимнания"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        />
+
+    <EditText
+        android:id="@+id/reminderTitleEdit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:background="@null"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/reminderDescription"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+
+        />
+
+    <TextView
+        android:id="@+id/reminderDescription"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Описание напоминания"
+        android:textColor="#777777"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/reminderTitle"
+        app:layout_constraintTop_toBottomOf="@id/reminderTitle"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <EditText
+        android:id="@+id/reminderDescriptionEdit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:textColor="#777777"
+        android:textSize="18sp"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"
+        app:layout_constraintStart_toStartOf="@id/reminderTitleEdit"
+        app:layout_constraintTop_toBottomOf="@id/reminderTitleEdit"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/moreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_more_horiz_24"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/reminderCheckBox"
+        android:layout_marginEnd="5dp"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/deleteButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/delete_icon"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/reminderCheckBox"
+        android:layout_marginEnd="5dp"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/reminderViewBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="reminderCheckBox, reminderDescription"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintTop_toBottomOf="@id/reminderViewBarrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
