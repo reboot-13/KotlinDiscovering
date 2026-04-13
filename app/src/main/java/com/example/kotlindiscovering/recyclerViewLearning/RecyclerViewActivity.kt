@@ -1,16 +1,11 @@
 package com.example.kotlindiscovering.recyclerViewLearning
 
-import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import com.example.kotlindiscovering.R
 import com.example.kotlindiscovering.databinding.ActivityRecyclerViewBinding
-import kotlin.random.Random
-
 class RecyclerViewActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecyclerViewBinding
@@ -43,6 +38,7 @@ class RecyclerViewActivity : AppCompatActivity() {
             }
 
             override fun onFinishEditing(reminder: Reminder, title: String, description: String) {
+                reminderService.moveReminderToBottom(reminder)
                 reminderService.finishEditing(reminder, title, description)
             }
         })
