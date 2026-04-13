@@ -36,7 +36,6 @@ class ReminderService {
         }
     }
 
-
     private fun moveReminderToBottom (reminder: Reminder){
         val checkedCount = reminders.count { it.isDone }
         val selectedReminderIndex = reminders.indexOf(reminder)
