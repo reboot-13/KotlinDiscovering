@@ -36,17 +36,18 @@ class ReminderService {
         }
     }
 
-    private fun moveReminderToBottom (reminder: Reminder){
+
+    fun moveReminderToBottom (reminder: Reminder){
         val checkedCount = reminders.count { it.isDone }
         val selectedReminderIndex = reminders.indexOf(reminder)
+        val lastNotCheckedReminderIndex = reminders.size - 1 - checkedCount
         if (selectedReminderIndex != -1) {
             reminders = ArrayList(reminders)
             if (reminder.isDone) {
                 reminders.removeAt(selectedReminderIndex)
-                reminders.add(reminder)
+                reminders.add(lastNotCheckedReminderIndex + 1, reminder)
             }
             else {
-                val lastNotCheckedReminderIndex = reminders.size - 1 - checkedCount
                 Collections.swap(reminders, selectedReminderIndex, lastNotCheckedReminderIndex)
             }
         }

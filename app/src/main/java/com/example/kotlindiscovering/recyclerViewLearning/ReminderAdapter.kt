@@ -1,6 +1,5 @@
 package com.example.kotlindiscovering.recyclerViewLearning
 
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
