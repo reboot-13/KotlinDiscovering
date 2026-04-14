@@ -150,20 +150,20 @@ class ReminderAdapter(private val reminderActions: ReminderActions): RecyclerVie
             reminderCheckBox.setOnCheckedChangeListener(null)
             reminderCheckBox.isChecked = reminder.isDone
             if (reminder.isDone) {
-                showDeleteButton(this)
+                showDeleteButton(holder.binding)
             } else {
-                showMoreButton(this)
+                showMoreButton(holder.binding)
             }
 
             if (reminder.isEditing){
                 reminderTitleEdit.setText(reminder.title)
                 reminderDescriptionEdit.setText(reminder.description)
-                showEditableComponents(this)
+                showEditableComponents(holder.binding)
                 requestKeyboardFocus(reminderTitleEdit)
                 reminderTitleEdit.setOnFocusChangeListener { _, hasFocus ->
                     if (!hasFocus) requestKeyboardFocus(reminderDescriptionEdit)
                 }
-                reminderDescriptionEdit.setOnEditorActionListener { v, actionId, event ->
+                reminderDescriptionEdit.setOnEditorActionListener { _, actionId, event ->
                     if (actionId ==  android.view.inputmethod.EditorInfo.IME_ACTION_DONE ||
                         (event != null && event.keyCode == android.view.KeyEvent.KEYCODE_ENTER && event.action == android.view.KeyEvent.ACTION_DOWN)) {
                         reminderActions.onFinishEditing(
