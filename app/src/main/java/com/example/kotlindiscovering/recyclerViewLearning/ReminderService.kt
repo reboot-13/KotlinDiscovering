@@ -1,6 +1,5 @@
 package com.example.kotlindiscovering.recyclerViewLearning
 
-import java.util.Collections
 import kotlin.random.Random
 
 typealias RemindersListener = (reminders: List<Reminder>) -> Unit
@@ -40,15 +39,18 @@ class ReminderService {
     fun moveReminderToBottom (reminder: Reminder){
         val checkedCount = reminders.count { it.isDone }
         val selectedReminderIndex = reminders.indexOf(reminder)
-        val lastNotCheckedReminderIndex = reminders.size - 1 - checkedCount
+        val lastNotCheckedReminderPosition = reminders.size - checkedCount
+        val lastNotCheckedReminderIndex = lastNotCheckedReminderPosition - 1
+
         if (selectedReminderIndex != -1) {
             reminders = ArrayList(reminders)
             if (reminder.isDone) {
                 reminders.removeAt(selectedReminderIndex)
-                reminders.add(lastNotCheckedReminderIndex + 1, reminder)
+                reminders.add(lastNotCheckedReminderPosition, reminder)
             }
             else {
-                Collections.swap(reminders, selectedReminderIndex, lastNotCheckedReminderIndex)
+                reminders.removeAt(selectedReminderIndex)
+                reminders.add(lastNotCheckedReminderIndex, reminder)
             }
         }
     }
